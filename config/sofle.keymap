@@ -40,7 +40,7 @@
 &kp BSLH   &kp SQT   &kp COMMA   &kp DOT  &kp P     &kp Y                            &kp F     &kp G     &kp C     &kp R    &kp L    &kp FSLH
 &kp EQUAL  &kp A     &kp O       &kp E    &kp U     &kp I                            &kp D     &kp H     &kp T     &kp N    &kp S    &kp MINUS
 &kp LBKT   &kp SEMI  &kp Q       &kp J    &kp K     &kp X      &kp C_MUTE &none      &kp B     &kp M     &kp W     &kp V    &kp Z    &kp RBKT
-                     &none       &none    &none     &mo LOWER  &kp ENTER  &kp SPACE  &mo RAISE &sk TILDE_LAYER &none     &none
+                     &none       &none    &none     &mo LOWER  &kp ENTER  &kp SPACE  &mo RAISE &sl TILDE_LAYER &none     &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
