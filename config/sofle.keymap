@@ -23,8 +23,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         adjust_layer {
-            if-layers = <LOWER RAISE>;
-            then-layer = <ADJUST>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 
@@ -39,7 +39,7 @@
 &kp BSLH   &kp SQT   &kp COMMA   &kp DOT  &kp P     &kp Y                            &kp F     &kp G     &kp C     &kp R    &kp L    &kp FSLH
 &kp EQUAL  &kp A     &kp O       &kp E    &kp U     &kp I                            &kp D     &kp H     &kp T     &kp N    &kp S    &kp MINUS
 &kp LBKT   &kp SEMI  &kp Q       &kp J    &kp K     &kp X      &kp C_MUTE &none      &kp B     &kp M     &kp W     &kp V    &kp Z    &kp RBKT
-                     &none       &none    &none     &mo LOWER  &kp ENTER  &kp SPACE  &mo RAISE &sl 4  &none     &none
+                     &none       &none    &none     &mo LOWER  &kp ENTER  &kp SPACE  &mo RAISE &none  &none     &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
