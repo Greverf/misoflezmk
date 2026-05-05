@@ -91,7 +91,7 @@
 &kp BSLH   &kp APOS  &kp COMMA  &kp DOT  &kp P     &kp Y                                     &kp F  &kp G        &kp C              &kp R            &kp L               &kp SLASH
 &kp EQUAL  &ht_gui LEFT_GUI A  &htl LEFT_ALT O &hold_tap LEFT_SHIFT E &htl LCTRL U   &kp I   &kp D  &htl RCTRL H &hold_tap RSHIFT T &htl RIGHT_ALT N &ht_gui RIGHT_GUI S &kp MINUS
 &kp LBKT   &kp SEMI  &kp Q      &kp J    &kp K     &kp X   &kp C_MUTE        &none           &kp B  &kp M        &kp W              &kp V            &kp Z               &kp RBKT
-                     &none   &none    &none  &mo 1   &mt LSHIFT KP_ENTER         &mt LCTRL SPACE  &mo 2   &sl 4      &none   &kp INS
+                     &none   &none    &none  &mo LOWER   &mt LSHIFT KP_ENTER         &mt LCTRL SPACE  &mo RAISE   &sl 4      &none   &kp INS
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
