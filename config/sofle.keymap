@@ -16,7 +16,7 @@
 #define ADJUST 3
 #define TILDE_LAYER 4
 
-#define TAPPING TERM 135
+
 
 / {
 
