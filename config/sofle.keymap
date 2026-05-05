@@ -51,19 +51,7 @@
             retro-tap;
             quick-tap-ms = <200>;
         };
-
-        html: html {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HTML";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <135>;
-            quick-tap-ms = <200>;
-            retro-tap;
-            flavor = "tap-preferred";
-        };
-
+        
         ht_gui: ht_gui {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_GUI";
@@ -94,7 +82,7 @@
 &kp GRAVE  &kp N1    &kp N2     &kp N3   &kp N4    &kp N5                                    &kp N6 &kp N7              &kp N8       &kp N9           &kp N0              &kp ESC
 &kp BSLH   &kp APOS  &kp COMMA  &kp DOT  &kp P     &kp Y                                     &kp F  &kp G               &kp C        &kp R            &kp L               &kp SLASH
 &kp EQUAL  &ht_gui LEFT_GUI A  &htl LEFT_ALT O  &htl LCTRL E  &hold_tap LEFT_SHIFT U &kp I   &kp D  &hold_tap RSHIFT H  &htl RCTRL T &htl RIGHT_ALT N &ht_gui RIGHT_GUI S &kp MINUS
-&kp LBKT   &kp SEMI  &kp Q      &kp J    &kp K     &kp X   &kp C_MUTE             &none           &kp B   &kp M      &kp W   &kp V    &kp Z   &kp RBKT
+&kp LBKT   &kp SEMI  &kp Q      &kp J    &kp K     &kp X   &kp C_MUTE        &none           &kp B  &kp M               &kp W        &kp V            &kp Z               &kp RBKT
                      &none   &none    &none  &mo 1   &mt LSHIFT KP_ENTER         &mt LCTRL SPACE  &mo 2   &sl 4      &none   &kp INS
             >;
 
@@ -168,7 +156,7 @@
 &none  &none      &none        &none      &none      &none                      &none   &kp RA(U)  &none  &none      &none  &none
 &none  &kp RA(X)  &kp RA(DOT)  &kp RA(G)  &kp RA(J)  &kp RA(B)                  &none   &none      &none  &kp RA(N)  &none  &none
 &none  &none      &none        &none      &none      &none      &none    &none  &none   &none      &none  &none      &none  &none
-                  &none        &none      &none      &trans     &none    &none  &trans  &none      &none  &none
+                  &none        &none      &none      &trans     &none    &none  &none   &none      &none  &none
             >;
         };
     };
