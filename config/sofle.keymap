@@ -87,10 +87,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE  &kp N1    &kp N2     &kp N3   &kp N4    &kp N5                                    &kp N6 &kp N7              &kp N8       &kp N9           &kp N0              &kp ESC
-&kp BSLH   &kp APOS  &kp COMMA  &kp DOT  &kp P     &kp Y                                     &kp F  &kp G               &kp C        &kp R            &kp L               &kp SLASH
-&kp EQUAL  &ht_gui LEFT_GUI A  &htl LEFT_ALT O  &htl LCTRL E  &hold_tap LEFT_SHIFT U &kp I   &kp D  &hold_tap RSHIFT H  &htl RCTRL T &htl RIGHT_ALT N &ht_gui RIGHT_GUI S &kp MINUS
-&kp LBKT   &kp SEMI  &kp Q      &kp J    &kp K     &kp X   &kp C_MUTE        &none           &kp B  &kp M               &kp W        &kp V            &kp Z               &kp RBKT
+&kp GRAVE  &kp N1    &kp N2     &kp N3   &kp N4    &kp N5                                    &kp N6 &kp N7       &kp N8             &kp N9           &kp N0              &kp ESC
+&kp BSLH   &kp APOS  &kp COMMA  &kp DOT  &kp P     &kp Y                                     &kp F  &kp G        &kp C              &kp R            &kp L               &kp SLASH
+&kp EQUAL  &ht_gui LEFT_GUI A  &htl LEFT_ALT O &hold_tap LEFT_SHIFT E &htl LCTRL U   &kp I   &kp D  &htl RCTRL H &hold_tap RSHIFT T &htl RIGHT_ALT N &ht_gui RIGHT_GUI S &kp MINUS
+&kp LBKT   &kp SEMI  &kp Q      &kp J    &kp K     &kp X   &kp C_MUTE        &none           &kp B  &kp M        &kp W              &kp V            &kp Z               &kp RBKT
                      &none   &none    &none  &mo 1   &mt LSHIFT KP_ENTER         &mt LCTRL SPACE  &mo 2   &sl 4      &none   &kp INS
             >;
 
