@@ -2,7 +2,6 @@
 
 / {
     // Usamos el matrix transform estándar del Sofle
-    // ZMK ya lo tiene definido internamente, solo lo referenciamos
     default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
@@ -34,5 +33,38 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &physical_layout0;
+    };
+};
+
+// ===== NUEVO: Configuración de la pantalla OLED =====
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 6)>,  // GPIO 6 como SDA
+                    <NRF_PSEL(TWIM_SCL, 0, 7)>;  // GPIO 7 como SCL
+        };
+    };
+};
+
+&i2c0 {
+    compatible = "nordic,nrf-twim";
+    status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-names = "default";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        prechargep = <0x22>;
     };
 };
