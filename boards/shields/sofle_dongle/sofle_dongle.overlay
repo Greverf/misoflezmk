@@ -60,31 +60,13 @@
 };
 
 &i2c0 {
-    compatible = "nordic,nrf-twim";
     status = "okay";
-
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
-    pinctrl-names = "default", "sleep";
-
-    clock-frequency = <I2C_BITRATE_STANDARD>;
-
+    clock-frequency = <100000>;  // Fuerza 100kHz (más estable)
+    
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
-
         width = <128>;
         height = <64>;
-
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;
-
-        segment-remap;
-        com-invdir;
-        com-sequential;
-
-        prechargep = <0x22>;
     };
 };
