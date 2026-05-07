@@ -1,8 +1,4 @@
-/* /*
- * Copyright (c) 2024 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+//nombre de archivo custom_status_screen.c
 
 #include "custom_status_screen.h"
 #include "widgets/battery_status.h"

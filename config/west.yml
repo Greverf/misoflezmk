@@ -1,3 +1,5 @@
+#nombre de archivo west.yml carpeta config
+
 manifest:
   defaults:
     revision: v0.3

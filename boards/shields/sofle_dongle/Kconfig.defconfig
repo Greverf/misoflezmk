@@ -1,4 +1,4 @@
-#nombre del archivo kconfig.delconfig
+#nombre del archivo kconfig.defconfig
 
 if SHIELD_SOFLE_DONGLE
 

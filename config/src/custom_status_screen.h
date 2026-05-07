@@ -1,3 +1,5 @@
+//nombre de archivo custom_status_screen.h
+
 /*
  *
  * Copyright (c) 2024 The ZMK Contributors
