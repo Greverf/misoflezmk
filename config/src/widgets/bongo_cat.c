@@ -28,7 +28,7 @@ LV_IMG_DECLARE(bongo_cat_right1);
 LV_IMG_DECLARE(bongo_cat_right2);
 LV_IMG_DECLARE(bongo_cat_both1);
 LV_IMG_DECLARE(bongo_cat_both1_open);
-LV_IMG_DECLARE(bongo_cat_both2);
+//LV_IMG_DECLARE(bongo_cat_both2);
 
 #define ANIMATION_SPEED_IDLE 10000
 const lv_img_dsc_t *idle_imgs[] = {
@@ -63,7 +63,7 @@ const lv_img_dsc_t *mid_imgs[] = {
 
 #define ANIMATION_SPEED_FAST 200
 const lv_img_dsc_t *fast_imgs[] = {
-    &bongo_cat_both2,
+    &bongo_cat_both1,
     &bongo_cat_both1,
     &bongo_cat_none,
     &bongo_cat_none,
