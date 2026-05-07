@@ -26,6 +26,3 @@ lv_obj_t *zmk_display_status_screen() {
 
 // Registrar la pantalla en el sistema de ZMK
 ZMK_DISPLAY_STATUS_SCREEN(zmk_display_status_screen);
-    
-    return screen;
-}
