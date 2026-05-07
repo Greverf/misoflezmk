@@ -64,9 +64,17 @@
     clock-frequency = <100000>;  // Fuerza 100kHz (más estable)
     
     oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <64>;
-    };
+    compatible = "solomon,ssd1306fb";
+    reg = <0x3c>;
+    width = <128>;
+    height = <64>;
+    segment-offset = <0>;      // ← Esta es obligatoria
+    page-offset = <0>;         // ← Esta también
+    display-offset = <0>;      // ← Esta también
+    multiplex-ratio = <63>;
+    segment-remap;             // ← Esta es propiedad booleana (sin valor)
+    com-invdir;                // ← Booleana
+    com-sequential;            // ← Booleana
+    prechargep = <0x22>;
+};
 };
