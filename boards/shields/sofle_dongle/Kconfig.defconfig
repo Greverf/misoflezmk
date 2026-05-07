@@ -1,5 +1,5 @@
-*/
-/*
+#nombre del archivo kconfig.delconfig
+
 if SHIELD_SOFLE_DONGLE
 
 config ZMK_KEYBOARD_NAME
