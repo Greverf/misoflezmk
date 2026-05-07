@@ -6,29 +6,25 @@
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 lv_obj_t *zmk_display_status_screen() {
+    // Este log es CRÍTICO - lo verás por Bluetooth
+    LOG_ERR("=== CUSTOM SCREEN EJECUTANDOSE ===");
+    LOG_ERR("=== SI VES ESTO, LA PANTALLA FUNCIONA ===");
+    
     lv_obj_t *screen = lv_obj_create(NULL);
     
-    // Fondo: TODOS los píxeles APAGADOS (negro)
+    // Fondo negro
     lv_obj_set_style_bg_color(screen, lv_color_black(), 0);
     lv_obj_set_style_bg_opa(screen, LV_OPA_COVER, 0);
     
-    // Crear etiqueta
+    // Texto grande y claro
     lv_obj_t *label = lv_label_create(screen);
-    lv_label_set_text(label, "HOLA MUNDO!");
-    
-    // Texto: Píxeles ENCENDIDOS (blanco/azul)
+    lv_label_set_text(label, "HOLA");
     lv_obj_set_style_text_color(label, lv_color_white(), 0);
-    
-    // Asegurar que la fuente no sea transparente
-    lv_obj_set_style_text_opa(label, LV_OPA_COVER, 0);
-    
-    // Centrar
+    lv_obj_set_style_text_font(label, &lv_font_montserrat_24, 0);  // Fuente más grande
     lv_obj_center(label);
     
-    // REFRESCO FORZADO
+    // Fuerza refresco
     lv_obj_invalidate(screen);
-    
-    LOG_INF("Pantalla actualizada - deberia ver texto");
     
     return screen;
 }
