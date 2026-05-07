@@ -1,8 +1,4 @@
-#nombre de archivo sofle_dongle.overlay
-
-
 /dts-v1/;
-
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
@@ -41,7 +37,6 @@
     };
 };
 
-// ===== NUEVO: Configuración de la pantalla OLED =====
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
@@ -86,7 +81,7 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <63>;
-        ready-time-ms = <10>;
+
         segment-remap;
         com-invdir;
         com-sequential;
