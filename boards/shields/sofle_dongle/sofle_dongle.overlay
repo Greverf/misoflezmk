@@ -1,5 +1,8 @@
 #nombre de archivo sofle_dongle.overlay
 
+
+/dts-v1/;
+
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
