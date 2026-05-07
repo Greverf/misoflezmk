@@ -81,7 +81,7 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <63>;
-
+        ready-time-ms = <10>;
         segment-remap;
         com-invdir;
         com-sequential;
