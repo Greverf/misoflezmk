@@ -1,10 +1,10 @@
-/*
+/* /*
  * Copyright (c) 2024 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
 
-#include "custom_status_screen.h"
+/* #include "custom_status_screen.h"
 #include "widgets/battery_status.h"
 #include "widgets/modifiers.h"
 #include "widgets/bongo_cat.h"
@@ -58,6 +58,19 @@ lv_obj_t *zmk_display_status_screen() {
 
     zmk_widget_peripheral_battery_status_init(&peripheral_battery_status_widget, screen);
     lv_obj_align(zmk_widget_peripheral_battery_status_obj(&peripheral_battery_status_widget), LV_ALIGN_TOP_RIGHT, 0, 0);
+
+    return screen;
+} */ 
+
+lv_obj_t *zmk_display_status_screen() {
+
+    lv_obj_t *screen = lv_obj_create(NULL);
+
+    lv_obj_t *label = lv_label_create(screen);
+
+    lv_label_set_text(label, "HELLO");
+
+    lv_obj_center(label);
 
     return screen;
 }
