@@ -53,9 +53,20 @@ config LV_DPI_DEF
 config LV_Z_BITS_PER_PIXEL
     default 1
 
-choice LV_COLOR_DEPTH
+config LV_COLOR_DEPTH
     default LV_COLOR_DEPTH_1
-endchoice
+
+config LV_DRAW_COMPLEX
+    default n
+
+config LV_DRAW_SW_COMPLEX
+    default n
+
+config LV_USE_ASSERT_NULL
+    default n
+
+config LV_USE_ASSERT_MALLOC
+    default n
 
 config ZMK_DISPLAY
     default y
