@@ -24,6 +24,6 @@ include:
   - board: nice_nano//zmk
     shield: sofle_right
   - board: nice_nano//zmk
-    shield: sofle_dongle dongle_screen
+    shield: sofle_dongle dongle_display
   - board: nice_nano//zmk
     shield: settings_reset
