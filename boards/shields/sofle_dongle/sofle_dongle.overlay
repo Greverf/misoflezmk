@@ -1,87 +1,74 @@
-/*
- * Dongle Screen - ST7789 1.54" TFT SPI
- * Board: nice!nano / Pro Micro nRF52840
- *
- * Pinout:
- *   SCLK  -> P1.13 (D15)
- *   MOSI  -> P0.10 (D16)
- *   CS    -> P1.15 (D18)
- *   DC    -> P0.09 (D10)
- *   RST   -> P0.06 (D1)
- *   BL    -> P0.11 (D7)
- *   VCC   -> 3.3V
- *   GND   -> GND
- */
-
+#include <dt-bindings/zmk/matrix_transform.h>
 #include <zephyr/dt-bindings/gpio/gpio.h>
 #include <zephyr/dt-bindings/mipi_dbi/mipi_dbi.h>
 
 / {
     chosen {
-        zephyr,display = &st7789v;
+        zmk,kscan = &kscan0;
+        zmk,matrix_transform = &default_transform;
+        zephyr,display = &st7789;
     };
 
-    /* Backlight como LED GPIO */
-    lcd_backlight: lcd_backlight {
-        compatible = "gpio-leds";
-        lcd_bl: lcd_bl {
-            gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
-            label = "LCD Backlight";
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <5>;
+        map = <
+RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)                 RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
+RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)                 RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
+RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                 RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
+RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6) RC(3,6) RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11)
+        RC(4,1) RC(4,2) RC(4,3) RC(4,4)                                  RC(4,7) RC(4,8) RC(4,9) RC(4,10)
+        >;
+    };
+
+    mipi_dbi_st7789 {
+        compatible = "zephyr,mipi-dbi-spi";
+        spi-dev = <&pro_micro_spi>;
+        dc-gpios = <&pro_micro 5 GPIO_ACTIVE_HIGH>;
+        reset-gpios = <&pro_micro 4 GPIO_ACTIVE_LOW>;
+        write-only;
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        st7789: st7789v@0 {
+            compatible = "sitronix,st7789v";
+            reg = <0>;
+            mipi-max-frequency = <20000000>;
+            mipi-mode = <MIPI_DBI_MODE_SPI_4WIRE>;
+            width = <240>;
+            height = <240>;
+            x-offset = <0>;
+            y-offset = <0>;
+            inversion-on;
+            rgb-is-inverted;
+            vcom = <0x19>;
+            gctrl = <0x35>;
+            vrhs = <0x12>;
+            vdvs = <0x20>;
+            mdac = <0x00>;
+            gamma = <0x01>;
+            colmod = <0x05>;
+            lcm = <0x2c>;
+            porch-param = [0c 0c 00 33 33];
+            cmd2en-param = [5a 69 02 01];
+            pwctrl1-param = [a4 a1];
+            pvgam-param = [D0 04 0D 11 13 2B 3F 54 4C 18 0D 0B 1F 23];
+            nvgam-param = [D0 04 0C 11 13 2C 3F 44 51 2F 1F 1F 20 23];
+            ram-param = [00 F0];
+            rgb-param = [CD 08 14];
         };
     };
 };
 
-/* Configuración de pines SPI0 para nRF52840 */
-&pinctrl {
-    spi0_default: spi0_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;
-        };
-    };
-
-    spi0_sleep: spi0_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 10)>;
-            low-power-enable;
-        };
-    };
-};
-
-&spi0 {
+&pro_micro_spi {
     status = "okay";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-
-    cs-gpios = <&gpio1 15 GPIO_ACTIVE_LOW>; /* CS en P1.15 */
-
-    st7789v: st7789v@0 {
-        compatible = "sitronix,st7789v";
-        reg = <0>;
-        spi-max-frequency = <20000000>;
-
-        /* Requerido por Zephyr 4.1 */
-        mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
-
-        /* Dimensiones de la pantalla */
-        width = <240>;
-        height = <240>;
-
-        /* Pines de control */
-        reset-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;   /* RST en P0.06 */
-        dc-gpios    = <&gpio0 9 GPIO_ACTIVE_HIGH>;  /* DC  en P0.09 */
-
-        /*
-         * Si los colores salen invertidos (rojo <-> azul),
-         * prueba a añadir una de estas líneas:
-         *
-         *   inversion-off;
-         *
-         * o ajustar el orden de color con mdac:
-         *
-         *   mdac = <0x08>;
-         */
-    };
+    cs-gpios = <&pro_micro 6 GPIO_ACTIVE_LOW>;
 };
