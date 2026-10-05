@@ -52,7 +52,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6) RC(3,6) RC(3,7)
             x-offset = <0>;
             y-offset = <0>;
             inversion-off;
-            rgb-is-inverted;
             vcom = <0x19>;
             gctrl = <0x35>;
             vrhs = <0x12>;
