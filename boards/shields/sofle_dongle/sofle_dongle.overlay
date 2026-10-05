@@ -37,8 +37,8 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6) RC(3,6) RC(3,7)
         write-only;
         #address-cells = <1>;
         #size-cells = <0>;
-
-        st7789: st7789v@0 {
+        
+         st7789: st7789v@0 {
             compatible = "sitronix,st7789v";
             reg = <0>;
             mipi-max-frequency = <20000000>;
@@ -47,8 +47,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6) RC(3,6) RC(3,7)
             height = <240>;
             x-offset = <0>;
             y-offset = <0>;
-            inversion-on;
-            rgb-is-inverted;
             vcom = <0x19>;
             gctrl = <0x35>;
             vrhs = <0x12>;
