@@ -38,7 +38,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6) RC(3,6) RC(3,7)
         #address-cells = <1>;
         #size-cells = <0>;
         
-         st7789: st7789v@0 {
+         st7789: st7789v@0 { 
             compatible = "sitronix,st7789v";
             reg = <0>;
             mipi-max-frequency = <20000000>;
