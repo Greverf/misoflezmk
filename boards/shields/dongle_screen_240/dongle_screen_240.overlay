@@ -1,4 +1,8 @@
-&st7789 {
-    height = <240>;
-    y-offset = <0>;
+&spi3 {
+    status = "okay";
+    st7789: st7789@0 {
+        compatible = "sitronix,st7789";
+        reg = <0>;
+        // pines de control, spi-max-frequency, etc.
+    };
 };
