@@ -68,9 +68,9 @@ disp_spi: &spi3 {
          mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
          reg = <0>;
          width = <240>;
-         height = <240>;
+         height = <120>;
          x-offset = <0>;
-         y-offset = <20>;
+         y-offset = <0>;
          vcom = <0x19>;
          gctrl = <0x35>;
          vrhs = <0x12>;
