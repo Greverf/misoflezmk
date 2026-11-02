@@ -4,6 +4,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
+        zmk,display = &st7789;
     };
 
     kscan0: kscan_0 {
