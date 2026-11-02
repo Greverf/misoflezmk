@@ -160,6 +160,7 @@
         };
 
         tilde_layer {
+            display-name = "TILDE"
             bindings = <
 &none  &none      &none        &none      &none      &none                      &none   &none      &none  &none      &none  &kp RA(SEMI )
 &none  &none      &none        &none      &none      &none                      &none   &kp RA(U)  &none  &none      &none  &none
