@@ -7,7 +7,7 @@ include:
     shield: sofle_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: split-dongle-right
-  - board: nice_nano@2.0.0//zmk
+  - board: nice_nano//zmk
     shield: sofle_dongle prospector_adapter
     artifact-name: sofle-dongle-240
   - board: nice_nano//zmk
