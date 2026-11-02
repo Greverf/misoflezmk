@@ -15,3 +15,4 @@ manifest:
       path: modules/prospector-zmk-module
   self:
     path: config
+    
