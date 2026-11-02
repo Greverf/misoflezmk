@@ -1,2 +1,0 @@
-config SHIELD_DONGLE_SCREEN_240
-    def_bool $(shields_list_contains,dongle_screen_240)
