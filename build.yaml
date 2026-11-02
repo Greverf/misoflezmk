@@ -9,6 +9,6 @@ include:
     artifact-name: split-dongle-right
   - board: nice_nano@2.0.0//zmk
     shield: sofle_dongle dongle_screen dongle_screen_240
-    artifact-name: sofle-dongle-240
+    artifact-name: sofle-dongle-240G
   - board: nice_nano//zmk
     shield: settings_reset
