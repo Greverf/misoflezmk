@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: zmk-dongle-screen
       remote: bwshockley
-      revision: donglecolor # o la rama específica que utilices
+      revision: main # o la rama específica que utilices
   self:
     path: config
