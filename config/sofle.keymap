@@ -26,6 +26,7 @@
             then-layer = <3>;
         };
     };
+    
 
     behaviors {
         hold_tap: hold_tap {
@@ -91,7 +92,7 @@
 &kp BSLH   &kp APOS  &kp COMMA  &kp DOT  &kp P     &kp Y                                     &kp F  &kp G        &kp C              &kp R            &kp L               &kp SLASH
 &kp EQUAL  &ht_gui LEFT_GUI A  &htl LEFT_ALT O &hold_tap LEFT_SHIFT E &htl LCTRL U   &kp I   &kp D  &htl RCTRL H &hold_tap RSHIFT T &htl RIGHT_ALT N &ht_gui RIGHT_GUI S &kp MINUS
 &kp LBKT   &kp SEMI  &kp Q      &kp J    &kp K     &kp X   &kp C_MUTE        &none           &kp B  &kp M        &kp W              &kp V            &kp Z               &kp RBKT
-                     &none   &none    &none  &mo LOWER   &mt LSHIFT KP_ENTER         &mt LCTRL SPACE  &mo RAISE   &sl 4      &none   &kp INS
+                     &tog 5   &none    &none  &mo LOWER   &mt LSHIFT KP_ENTER         &mt LCTRL SPACE  &mo RAISE   &sl 4      &none   &kp INS
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -165,6 +166,18 @@
 &none  &kp RA(X)  &kp RA(DOT)  &kp RA(G)  &kp RA(J)  &kp RA(B)                  &none   &none      &none  &kp RA(N)  &none  &none
 &none  &none      &none        &none      &none      &none      &none    &none  &none   &none      &none  &none      &none  &none
                   &none        &none      &none      &trans     &none    &none  &none   &none      &none  &none
+            >;
+        };
+
+        qwerty_layer {
+            display-name = "QWERTY";
+
+            bindings = <
+&kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                              &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp ESC
+&kp ESC    &kp Q     &kp W     &kp E     &kp R     &kp T                               &kp Y   &kp U   &kp I   &kp O   &kp P   &kp BSPC
+&kp TAB    &kp A     &kp S     &kp D     &kp F     &kp G                               &kp H   &kp J   &kp K   &kp L   &kp SEMI &kp APOS
+&kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B     &kp C_MUTE       &none   &kp N   &kp M   &kp COMMA &kp DOT &kp SLASH &kp RSHFT
+                      &tog 5    &trans    &trans    &trans    &trans           &trans  &trans  &trans  &trans   &trans
             >;
         };
     };
