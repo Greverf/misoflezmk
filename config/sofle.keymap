@@ -78,14 +78,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "default";
-
-            // ------------------------------------------------------------------------------------------------------------
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
-            // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
-            // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
+            display-name = "dvorak";
 
             bindings = <
 &kp GRAVE  &kp N1    &kp N2     &kp N3   &kp N4    &kp N5                                    &kp N6 &kp N7       &kp N8             &kp N9           &kp N0              &kp ESC
@@ -100,15 +93,7 @@
 
         lower_layer {
             display-name = "lower";
-
-            // TODO: Some binds are waiting for shifted keycode support.
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
-            // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
-            // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
-            //               |     |      |      |      |        |  |       |      |       |       |      |
-
+            
             bindings = <
 &none  &kp F1         &kp F2         &kp F3     &kp F4         &kp F5                       &kp F6         &kp F7    &kp F8    &kp F9     &kp F10   &kp F11
 &none  &kp LS(LG(Y))  &kp LA(SPACE)  &kp LC(F)  &kp LS(LG(S))  &kp LC(Y)                    &kp PG_UP      &kp HOME  &kp UP    &kp END    &kp CAPS  &kp F12
@@ -123,13 +108,6 @@
         raise_layer {
             display-name = "raise";
 
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-            // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-            //                |      |       |       |      |      |  |      |      |      |       |      |
-
             bindings = <
 &none  &kp LG(N1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &kp LG(NUMBER_4)  &kp LG(NUMBER_5)                  &none   &none  &none  &none  &none  &none
 &none  &none       &none             &none             &none             &none                             &none   &none  &none  &none  &none  &none
@@ -142,13 +120,7 @@
         };
 
         adjust_layer {
-            // ----------------------------------------------------------------------------------------------------------------------------
-            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-            // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-            // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-            // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-            //                    |         |         |         |         |         | |      |      |      |       |      |
-
+            
             display-name = "adjust";
             bindings = <
 &bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                               &none   &none  &none  &none  &none  &none
@@ -171,7 +143,7 @@
         };
 
         qwerty_layer {
-            display-name = "QWERTY";
+            display-name = "QWERTY"
 
             bindings = <
 &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                              &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp ESC
