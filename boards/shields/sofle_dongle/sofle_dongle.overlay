@@ -31,7 +31,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6) RC(3,6) RC(3,7)
 / {
     sensors {
         compatible = "zmk,keymap-sensors";
-        sensors = <&encoder_1>;
+        sensors = <&encoder_1 &encoder_2>;
     };
 
     encoder_1: encoder_1 {
@@ -41,11 +41,11 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)  RC(4,6) RC(3,6) RC(3,7)
         steps = <80>;
         status = "okay";
     };
-    
+
     encoder_2: encoder_2 {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio1 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
         status = "okay";
     };
